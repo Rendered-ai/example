@@ -1,0 +1,38 @@
+{
+	"name": "Python 3",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": "..",
+		"args": { 
+			"VARIANT": "3.7",
+			"INSTALL_NODE": "false",
+			"NODE_VERSION": "lts/*"
+		}
+	},
+	"settings": { 
+		"terminal.integrated.profiles.linux": {
+			"bash": {
+				"path": "/usr/bin/bash",
+				"overrideName": true
+			}
+		},
+		"terminal.integrated.defaultProfile.linux": "bash",
+		"python.condaPath": "/home/anadev/miniconda3/envs/anatools",
+		"python.pythonPath": "home/anadev/miniconda3/envs/anatools/bin/python",
+		"python.linting.enabled": true,
+		"python.linting.pylintEnabled": true,
+		"python.formatting.autopep8Path": "/usr/local/py-utils/bin/autopep8",
+		"python.formatting.blackPath": "/usr/local/py-utils/bin/black",
+		"python.formatting.yapfPath": "/usr/local/py-utils/bin/yapf",
+		"python.linting.banditPath": "/usr/local/py-utils/bin/bandit",
+		"python.linting.flake8Path": "/usr/local/py-utils/bin/flake8",
+		"python.linting.mypyPath": "/usr/local/py-utils/bin/mypy",
+		"python.linting.pycodestylePath": "/usr/local/py-utils/bin/pycodestyle",
+		"python.linting.pydocstylePath": "/usr/local/py-utils/bin/pydocstyle",
+		"python.linting.pylintPath": "/usr/local/py-utils/bin/pylint"
+	},
+	"extensions": ["ms-python.python", "ms-python.vscode-pylance"],
+	"runArgs": ["--network","host","-v","/var/run/docker.sock:/var/run/docker.sock", "--privileged=true","--gpus","all"],
+	"postCreateCommand": "sudo chmod 777 /var/run/docker.sock && docker logout public.ecr.aws && /home/anadev/miniconda3/envs/anatools/bin/pip install -r requirements.txt",
+	"remoteUser": "anadev"
+}
