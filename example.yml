@@ -1,0 +1,21 @@
+channel:
+  type: blender
+
+add_setup:
+  - example.lib.setup
+
+add_packages:
+  - example
+
+add_nodes:
+  - package: anatools
+    name: Weight
+    category: Modifiers
+    subcategory: Branch
+    color: "#B324F0"
+  - package: anatools
+    name: RandomRandint
+    alias: Random Integer
+    category: Values
+    subcategory: Generators
+    color: "#B3B3B3"

@@ -1,0 +1,2 @@
+anatools
+-e ./packages/example
