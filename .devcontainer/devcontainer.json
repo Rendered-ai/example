@@ -32,7 +32,7 @@
 		"python.linting.pylintPath": "/usr/local/py-utils/bin/pylint"
 	},
 	"extensions": ["ms-python.python", "ms-python.vscode-pylance"],
-	"runArgs": ["--network","host","-v","/var/run/docker.sock:/var/run/docker.sock", "--privileged=true","--gpus","all"],
+	"runArgs": ["--network","host","-v","/var/run/docker.sock:/var/run/docker.sock", "--privileged=true"], //,"--gpus","all"],
 	"postCreateCommand": "sudo chmod 777 /var/run/docker.sock && docker logout public.ecr.aws && /home/anadev/miniconda3/envs/anatools/bin/pip install -r requirements.txt",
 	"remoteUser": "anadev"
 }
