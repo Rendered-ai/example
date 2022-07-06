@@ -15,7 +15,7 @@ You'll need to create a Rendered.ai account and sign in to access this volume. I
 The following commands will mount the required volumes then execute the default graph.
 ```bash
 anamount --channel example.yml
-ana --channel example.yml --graph default.yml
+ana --channel example.yml --graph graphs/default.yml
 ```
 
 
